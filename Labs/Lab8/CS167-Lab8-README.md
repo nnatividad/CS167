@@ -2,28 +2,43 @@
 
 ## Student information
 
-* Full name:
-* E-mail:
-* UCR NetID:
-* Student ID:
+* Full name: Nathaniel Natividad
+* E-mail: nnati004@ucr.edu
+* UCR NetID: nnati004
+* Student ID: 862223646
 
 ## Answers
 
 * (Q1) What is the schema of the file? Copy it to the README file and keep it for your reference.
+root                                                                            
+ |-- hashtags: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- id: long (nullable = true)
+ |-- lang: string (nullable = true)
+ |-- place: struct (nullable = true)
+ |    |-- country_code: string (nullable = true)
+ |    |-- name: string (nullable = true)
+ |    |-- place_type: string (nullable = true)
+ |-- text: string (nullable = true)
+ |-- time: string (nullable = true)
+ |-- user: struct (nullable = true)
+ |    |-- followers_count: long (nullable = true)
+ |    |-- statuses_count: long (nullable = true)
+ |    |-- user_id: long (nullable = true)
+ |    |-- user_name: string (nullable = true)
 
-    ```
-    ```
 
 * (Q2) What is your command to import the `tweets.json` file?
 
     ```shell
-    # Replace here
+    mongoimport --collection tweets --file $HOME/tweets.json
     ```
 
 * (Q3) What is the output of the import command?
 
     ```text
-    # Replace here
+    2024-02-27T11:50:15.870-0800	connected to: mongodb://localhost/
+    2024-02-27T11:50:15.899-0800	1000 document(s) imported successfully. 0 document(s) failed to import.
     ```
 
 * (Q4) What is your command to count the total number of records in the `tweets` collection and what is the output of the command?
